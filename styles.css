@@ -395,9 +395,40 @@ html[dir="rtl"] body .capability-list li::before {
     font-weight: 300;
 }
 
+.philosophy-intro-block {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.philosophy-intro-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 300;
+    margin-bottom: var(--spacing-xs);
+    letter-spacing: 0.1em;
+    color: var(--accent);
+}
+
+.philosophy-intro-subtitle {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    font-style: italic;
+    color: var(--text-muted);
+    margin-bottom: var(--spacing-sm);
+}
+
+.philosophy-intro-text {
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
 .philosophy-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: var(--spacing-md);
     margin-top: var(--spacing-lg);
 }
@@ -407,11 +438,10 @@ html[dir="rtl"] body .capability-list li::before {
     align-items: center;
     gap: var(--spacing-sm);
     font-size: clamp(1.1rem, 2vw, 1.3rem);
-    justify-content: center;
 }
 
 html[dir="rtl"] body .philosophy-item {
-    flex-direction: row-reverse;
+    font-family: var(--font-arabic);
 }
 
 .philosophy-icon {
@@ -596,7 +626,13 @@ html[dir="rtl"] body .why-item {
     }
 
     .philosophy-grid {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .philosophy-item {
+        width: 100%;
+        max-width: 300px;
     }
 
     .capability-card {

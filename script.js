@@ -43,12 +43,16 @@ const content = {
         service5: "Full turnkey event solutions",
 
         philosophyTitle: "Our Philosophy",
+        philosophyIntroTitle: "Aura Bloom Events",
+        philosophyIntroSubtitle: "We create experiences that heal.",
+        philosophyIntroText: "Our vision is holistic—events designed to elevate emotion, connection, and meaning",
         philosophyStatement1: "We do not chase momentary spectacle.",
         philosophyStatement2: "We create <b>refined, intelligent luxury</b>. Each project is built on a balance of:",
         philosophyItem1: "Aesthetic excellence",
         philosophyItem2: "Functional precision",
         philosophyItem3: "Emotional depth",
         philosophyItem4: "Clear purpose",
+        philosophyItem5: "Holistic style",
 
         whyTitle: "Why Aura Bloom",
         why1: "Fully customized concepts",
@@ -110,12 +114,16 @@ const content = {
         service5: "إدارة وتنفيذ كامل للحدث (Turnkey Solutions)",
 
         philosophyTitle: "فلسفتنا",
+        philosophyIntroTitle: "أورا بلوم للفعاليات",
+        philosophyIntroSubtitle: "نصنع تجارب تداوي الروح.",
+        philosophyIntroText: "رؤيتنا شمولية — فعاليات مُصممة لتعزيز المشاعر، التواصل، والمعنى.",
         philosophyStatement1: "نحن لا نطارد الإبهار اللحظي.",
         philosophyStatement2: "نصنع <b>فخامة هادئة، ذكية، ومدروسة</b>. كل مشروع لدينا هو توازن بين:",
         philosophyItem1: "الجمال",
         philosophyItem2: "الوظيفة",
         philosophyItem3: "الشعور",
         philosophyItem4: "الرسالة",
+        philosophyItem5: "أسلوب شمولي",
 
         whyTitle: "لماذا Aura Bloom",
         why1: "تصميم مخصص لكل عميل",
