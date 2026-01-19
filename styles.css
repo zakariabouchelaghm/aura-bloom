@@ -30,6 +30,9 @@
 
 html {
     scroll-behavior: smooth;
+    min-height: 100vh;
+    min-height: 100dvh;
+    /* Dynamic viewport height for mobile browsers */
 }
 
 body {
@@ -39,6 +42,9 @@ body {
     color: var(--text-light);
     line-height: 1.7;
     overflow-x: hidden;
+    min-height: 100vh;
+    min-height: 100dvh;
+    /* Dynamic viewport height for mobile browsers */
 }
 
 html[dir="rtl"] body {
@@ -553,6 +559,11 @@ html[dir="rtl"] body .why-item {
     :root {
         --spacing-lg: 3rem;
         --spacing-xl: 4rem;
+    }
+
+    /* Fix background on mobile when browser navbar hides/shows */
+    body {
+        background-attachment: scroll;
     }
 
     .language-switcher {
