@@ -643,6 +643,8 @@ html[dir="rtl"] body .why-item {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid var(--glass-border);
+    direction: ltr !important;
+    /* Force LTR for consistent controls */
 }
 
 .slide {
@@ -682,14 +684,31 @@ html[dir="rtl"] body .why-item {
     transition: all 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.2);
     user-select: none;
+    direction: ltr !important;
+    unicode-bidi: isolate !important;
 }
 
 .prev {
-    left: 20px;
+    left: 20px !important;
+    right: auto !important;
 }
 
 .next {
-    right: 20px;
+    right: 20px !important;
+    left: auto !important;
+}
+
+/* Force LTR positioning even in RTL strictly */
+html[dir="rtl"] body .prev {
+    left: 20px !important;
+    right: auto !important;
+    transform: translateY(-50%);
+}
+
+html[dir="rtl"] body .next {
+    right: 20px !important;
+    left: auto !important;
+    transform: translateY(-50%);
 }
 
 .prev:hover,
@@ -703,6 +722,8 @@ html[dir="rtl"] body .why-item {
 .dots-container {
     text-align: center;
     padding: var(--spacing-md) 0 0;
+    direction: ltr !important;
+    /* Force LTR for consistent dots order */
 }
 
 .dot {
