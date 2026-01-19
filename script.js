@@ -60,6 +60,9 @@ const content = {
         visionTitle: "Our Vision",
         visionText: "To become a reference name in the <b>luxury event and experience industry</b> in the UAE, where every event becomes a signature and every moment leaves a lasting impression.",
 
+        conceptTitle: "Our Concept of Work",
+        conceptIntro: "From intimate Weddings and joyous Birthdays to innovative Kiosk designs, we bring every concept to life.",
+
         closingStatement1: "We craft luxury quietly.",
         closingStatement2: "We let the impact speak."
     },
@@ -123,6 +126,9 @@ const content = {
 
         visionTitle: "رؤيتنا",
         visionText: "أن نكون من الأسماء المرجعية في <b>صناعة التجارب الفاخرة</b> في الإمارات، حيث يتحوّل الحدث إلى توقيع، واللحظة إلى ذكرى دائمة.",
+
+        conceptTitle: "مفهوم عملنا",
+        conceptIntro: "من حفلات الزفاف الحميمة وأعياد الميلاد المبهجة إلى تصاميم الأكشاك المبتكرة، نحول كل مفهوم إلى واقع ينبض بالحياة.",
 
         closingStatement1: "نصنع الفخامة بصمت",
         closingStatement2: "ونترك الأثر يتحدث."
@@ -240,4 +246,57 @@ document.addEventListener('DOMContentLoaded', () => {
             ticking = true;
         }
     });
+
+    // Slideshow functionality
+    let slideIndex = 1;
+    let slideTimer;
+
+    function showSlides(n) {
+        let slides = document.getElementsByClassName("slide");
+        let dots = document.getElementsByClassName("dot");
+
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+
+        if (slides[slideIndex - 1]) {
+            slides[slideIndex - 1].style.display = "block";
+        }
+        if (dots[slideIndex - 1]) {
+            dots[slideIndex - 1].className += " active";
+        }
+    }
+
+    // Make functions global for onclick handlers
+    window.changeSlide = function (n) {
+        clearTimeout(slideTimer);
+        showSlides(slideIndex += n);
+        startAutoSlide();
+    }
+
+    window.currentSlide = function (n) {
+        clearTimeout(slideTimer);
+        showSlides(slideIndex = n);
+        startAutoSlide();
+    }
+
+    function startAutoSlide() {
+        slideTimer = setTimeout(() => {
+            slideIndex++;
+            showSlides(slideIndex);
+            startAutoSlide();
+        }, 5000); // Change slide every 5 seconds
+    }
+
+    // Initialize slideshow
+    showSlides(slideIndex);
+    startAutoSlide();
 });
+
